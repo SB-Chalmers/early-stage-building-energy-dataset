@@ -10,19 +10,18 @@ The PhD project investigates how simple architectural design variables (shape, o
 
 ## Included datasets and artifacts
 
-1. Grasshopper generation script (or instructions) that produces 9 building shapes with different architectural design variables. See `data/grasshopper/`.
-2. Synthetic training data mapping individual architectural design variables to their respective yearly energy demand. See `data/synthetic/sample_synthetic.csv` for a small example and `data/synthetic/README.md` for details.
-3. Developed machine learning models and example training code. See `models/` and `scripts/train_model.py`.
+1. Grasshopper generation script  that produces 9 building shapes with different architectural design variables. See `data/grasshopper/`.
+2. Synthetic training data mapping individual architectural design variables to their respective yearly energy demand. See `data/synthetic/data_all_adv.csv`and `data/synthetic/README.md` for details.
+3. Developed machine learning models. See `models/`.
 
 ## Repository structure
 
 The repository is organized for clarity and reproducibility:
 
 - `data/`
-  - `grasshopper/` - Grasshopper script(s) or instructions to generate the 9 building shapes.
-  - `synthetic/` - Synthetic training datasets (CSV files). A small sample is included for quick tests.
-- `models/` - Trained model artifacts and model metadata. (Contains a README and example saved models.)
-- `scripts/` - Python scripts to train models, run predictions, and preprocess data.
+  - `grasshopper/` - Grasshopper scripts to generate the 9 building shapes.
+  - `synthetic/` - Synthetic training datasets (CSV files). 
+- `models/` - Trained model artifacts and model metadata. 
 - `docs/` - Usage instructions, methodology notes, and how to reproduce results.
 - `requirements.txt` - Python dependencies for training and inference.
 - `.gitignore` - Common ignores for models, virtual environments, and datasets.
@@ -37,18 +36,7 @@ The repository is organized for clarity and reproducibility:
 
    PS> pip install -r requirements.txt
 
-3. Train a quick example model using the included sample dataset:
 
-   PS> python .\\scripts\\train_model.py --data .\\data\\synthetic\\sample_synthetic.csv --output models/rf_model.joblib
-
-4. See `docs/USAGE.md` for more details, including how to run inference and add your own Grasshopper outputs.
-
-## Notes
-
-- The included `sample_synthetic.csv` is a small, synthetic example for development and testing only. It is not representative of real-world energy use.
-- For production experiments, replace the sample CSV with your full synthetic dataset in `data/synthetic/` and consider storing large datasets outside the repository (e.g., a data server or cloud storage).
-
-If you'd like, I can also add example notebooks, evaluation scripts, or CI to run unit tests on the training pipeline.
 
 Citation
 --------
